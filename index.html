@@ -1,114 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat with ChatGPT</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #chat-container {
-            width: 480px;
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            overflow-y: scroll;
-            max-height: 400px;
-        }
-        #chat-container p {
-            margin: 5px 0;
-        }
-        #user-input {
-            width: calc(100% - 20px);
-            margin: 0 10px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        #send-btn {
-            margin-top: 5px;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Definitely Not A Sketchy Website</title>
 </head>
+
 <body>
-    <div id="chat-container"></div>
-    <input type="text" id="user-input" placeholder="Type your message...">
-    <button id="send-btn">Send</button>
-
-    <script>
-        const chatContainer = document.getElementById('chat-container');
-        const userInput = document.getElementById('user-input');
-        const sendBtn = document.getElementById('send-btn');
-
-        // Function to add user message to chat container
-        function addUserMessage(message) {
-            const userMsgElement = document.createElement('p');
-            userMsgElement.textContent = 'You: ' + message;
-            chatContainer.appendChild(userMsgElement);
-            chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll to bottom
-        }
-
-        // Function to add bot message to chat container
-        function addBotMessage(message) {
-            const botMsgElement = document.createElement('p');
-            botMsgElement.textContent = 'ChatGPT: ' + message;
-            chatContainer.appendChild(botMsgElement);
-            chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll to bottom
-        }
-
-        // Function to handle sending message
-        function sendMessage() {
-            const message = userInput.value.trim();
-            if (message === '') return; // Do nothing if input is empty
-            if (message === '69') return;
-
-            // Add user message to chat container
-            addUserMessage(message);
-
-            // Call ChatGPT API (replace 'YOUR_API_KEY' with your actual API key)
-            fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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' // Replace 'YOUR_API_KEY'
-                },
-                body: JSON.stringify({
-                    model: 'gpt-3.5-turbo', // Model name
-                    messages: [{ role: 'user', content: message }],
-                    max_tokens: 100 // Maximum tokens to generate
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                const botMessage = data.choices[0].message.content;
-                addBotMessage(botMessage); // Add bot response to chat container
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                addBotMessage('BOTNYA ERROR COBA LAGI YE BRO, RAWRRRR'); // Add error message to chat container
-            });
-
-            // Clear user input field
-            userInput.value = '';
-        }
-
-        // Event listener for send button
-        sendBtn.addEventListener('click', sendMessage);
-
-        // Event listener for Enter key press
-        userInput.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
-        });
-    </script>
+    <h1>Not A Sketchy Website</h1>
+    <hr>
+    <h2>Rewind Indonesia 2020 (Song Only)</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/m-LCagoW6AI?si=wiDK44Gtv5sU-zLs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <br>
+    <br>
+    <h2>Rewind Indonesia 2021 (Song Only)</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/H18dKp9YV5Y?si=inEMnAtAcfNRbPct" allowfullscreen></iframe>
+    <br>
+    <br>
+    <h2>Rewind Indonesia 2022 (Song Only)</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UhR-01cWhlI?si=UA8Uc1BixR6NB7iz" allowfullscreen></iframe>
+    <br>
+    <br>
+    <h2>Rewind Indonesia 2023 (Song Only)</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1n2NYcPlkVE?si=bDRD5J1F6mzq597d" allowfullscreen></iframe>
 </body>
+
 </html>
